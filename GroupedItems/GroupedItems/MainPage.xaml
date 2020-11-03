@@ -1,0 +1,35 @@
+﻿<Page x:Class="GroupedItems.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:GroupedItems"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      mc:Ignorable="d">
+    <Page.Resources>
+        <CollectionViewSource x:Key="GroupedByTitle"
+                              x:Name="GroupedByTitle"
+                              IsSourceGrouped="True"
+                              Source="{x:Bind VM.TitledGroups, Mode=OneWay}" />
+    </Page.Resources>
+    <Grid>
+        <ListView IsItemClickEnabled="True"
+                  ItemClick="ListView_ItemClick"
+                  ItemsSource="{x:Bind GroupedByTitle.View, Mode=OneWay}">
+            <ListView.Header>
+                <TextBlock Margin="12" Text="Click on items to move them between groups in code behind and show the listview seeing the changes and updating." />
+            </ListView.Header>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate x:DataType="local:TitledGroup">
+                            <TextBlock FontSize="20"
+                                       Foreground="Purple"
+                                       Text="{x:Bind Title, Mode=OneWay}" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+    </Grid>
+</Page>
