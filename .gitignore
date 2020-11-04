@@ -2,7 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/GroupedItems/GroupedItems/Generated Files
+/GroupedItems/Generated Files
+/GroupedItems/.vs
+/GroupedItems/.vs/GroupedItems/v16
+/GroupedItems/Debug
 /.vs
-/GroupedItems/GroupedItems/.vs/GroupedItems/v16
-/GroupedItems/GroupedItems/Debug
