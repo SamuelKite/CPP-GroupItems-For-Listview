@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="RootCauseExplorer.FilterButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="Auto" Height="24">
+    <Grid x:Name="LayoutRoot" Margin="2,0,2,0">
+        <Grid.Background>
+            <ImageBrush x:Name="LayoutRootBackgroundBrush" ImageSource="FilterButtonBG.png" Stretch="Fill"/>
+        </Grid.Background>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CommonStates">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition GeneratedDuration="0"/>
+                    <VisualTransition GeneratedDuration="00:00:00.1" To="Disabled"/>
+                    <VisualTransition GeneratedDuration="00:00:00.2" To="MouseOver"/>
+                    <VisualTransition GeneratedDuration="00:00:00.2" To="MouseOverDisabled"/>
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:01" Storyboard.TargetName="Label" Storyboard.TargetProperty="(Panel.Foreground).(SolidColorBrush.Color)">
+                            <EasingColorKeyFrame KeyTime="00:00:00" Value="#FFEEFFEE"/>
+                        </ColorAnimationUsingKeyFrames>
+                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:01" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)">
+                            <EasingColorKeyFrame KeyTime="00:00:00" Value="#4400FFFF"/>
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="MouseOverDisabled">
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:01" Storyboard.TargetName="Label" Storyboard.TargetProperty="(Panel.Foreground).(SolidColorBrush.Color)">
+                            <EasingColorKeyFrame KeyTime="00:00:00" Value="#FFAECFAE"/>
+                        </ColorAnimationUsingKeyFrames>
+                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:01" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)">
+                            <EasingColorKeyFrame KeyTime="00:00:00" Value="#440088FF"/>
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:01" Storyboard.TargetName="Label" Storyboard.TargetProperty="(Panel.Foreground).(SolidColorBrush.Color)">
+                            <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF5E5E5E"/>
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                
+            </VisualStateGroup>
+
+        </VisualStateManager.VisualStateGroups>
+        <Rectangle Height="Auto" Width="Auto" x:Name="Highlight" Margin="0" RadiusX="3" RadiusY="3" Fill="Transparent"/>
+        <Image Height="21" Width="21" Source="" x:Name="Icon" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Rectangle x:Name="RedSlash" Fill="#FF6C0A0A" HorizontalAlignment="Left" Margin="16,0,0,1" Width="4" RadiusY="2" RadiusX="2" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="45"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock x:Name="Label"  Text="Button Text" Margin="36,8,0,8" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="10" Foreground="#FF102D4E"/>
+    </Grid>
+</UserControl>

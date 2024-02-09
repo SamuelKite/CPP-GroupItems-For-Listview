@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="RootCauseExplorer.Event"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="Auto" Height="38">
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CommonStates">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition GeneratedDuration="0"/>
+                    <VisualTransition GeneratedDuration="00:00:00.1" To="MouseOver"/>
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="MouseOver">
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:01" Storyboard.TargetName="EventsTitleBorder" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)">
+                            <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF98BE6E"/>
+                        </ColorAnimationUsingKeyFrames>
+                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:01" Storyboard.TargetName="EventTitleStack" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                            <EasingColorKeyFrame KeyTime="00:00:00" Value="#FFA7D17B"/>
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+
+            </VisualStateGroup>
+
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="DateBarGrid" Grid.Row="0">
+            <Rectangle Name="DateBarTextBG" Fill="#33000000" Width="{Binding ActualWidth, ElementName=DateBarText, Mode=OneWay}" 
+                       Height="{Binding Height, ElementName=DateBarBG, Mode=OneWay}"
+                       Margin="12,0,0,0"
+                       RadiusX="2"
+                       RadiusY="2"
+                       HorizontalAlignment="Left"/>
+            <Border HorizontalAlignment="Left" BorderBrush="#FF98A4BB" BorderThickness="1" CornerRadius="2" Width="{Binding Width, ElementName=DateBarBG, Mode=OneWay}">
+            <Image HorizontalAlignment="Left" Height="14" Width="10" x:Name="DateBarBG" Source="DateBarBGInactive.png" Stretch="Fill"/>
+            </Border>
+            <TextBlock x:Name="DateBarText" Foreground="White" FontFamily="SegoeSB.ttf#Segoe Semibold" FontSize="10" Margin="6,0,6,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </Grid>
+        
+        <Grid x:Name="EventTitleGrid" Grid.Row="1">
+            
+             <Border x:Name="EventsTitleBorder" BorderBrush="#FF61AAAC" BorderThickness="1" Width="{Binding Width, ElementName=EventTitleStack, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22">
+                <StackPanel x:Name="EventTitleStack" Background="#FF99D4D8" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Height="22">
+				    <Image x:Name="EventsIcon" Height="21" Width="21" Source="EventsIcon.png" Visibility="Collapsed"/>
+                    <Image x:Name="ExecComIcon" Height="21" Width="21" Source="ExecComIcon.png" Visibility="Collapsed"/>
+                    <Image x:Name="DemoIcon" Height="21" Width="21" Source="DemoIcon.png" Visibility="Collapsed"/>
+                    <TextBlock x:Name="EventTitleText" FontFamily="segoe.ttf#Segoe" FontSize="11" Text="Event Title" VerticalAlignment="Center" Margin="6,0,6,0"/>
+                </StackPanel>
+             </Border>
+        </Grid>
+       
+    </Grid>
+</UserControl>

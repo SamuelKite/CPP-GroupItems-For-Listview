@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  App.xaml.cpp
+  GroupedItemsVM.cpp
+  MainPage.xaml.cpp
+  VMBase.cpp
+  XamlTypeInfo.Impl.g.cpp
+D:\Projects\Coding\Git\GroupedItems\VMBase.cpp(25,42): warning C4101: 'ex': unreferenced local variable
+  XamlTypeInfo.g.cpp
+  GroupedItems.vcxproj -> D:\Projects\Coding\Git\GroupedItems\ARM\Debug\GroupedItems\GroupedItems.exe

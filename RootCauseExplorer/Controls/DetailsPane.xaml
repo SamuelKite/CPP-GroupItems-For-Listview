@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="RootCauseExplorer.DetailsPane"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="Auto" Height="Auto">
+    <UserControl.Resources>
+        
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="#4FD9D6D6">
+        <Rectangle x:Name="QuarterlyShadow"
+            Fill="#66666666"
+            RadiusX="5"
+            RadiusY="5"
+            VerticalAlignment="Top" HorizontalAlignment="Left" 
+            Width="10"
+            Height="10"
+            Visibility="Collapsed"
+            />
+        <Rectangle x:Name="MonthlyShadow"
+            Fill="#66666666"
+            RadiusX="5"
+            RadiusY="5"
+            VerticalAlignment="Top" HorizontalAlignment="Left" 
+            Width="10"
+            Height="10"
+            Visibility="Collapsed"
+            />
+        <Border x:Name="Monthly" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="#6D9A39" BorderThickness="1" CornerRadius="5">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC4F1A8" Offset="1"/>
+                    <GradientStop Color="#FFE4F8D2"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+            <TextBlock x:Name="DateText" FontFamily="SEGOEUI.TTF#Segoe UI" FontSize="10" TextWrapping="NoWrap" Foreground="#325522" MaxWidth="181" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Visibility="Visible"/>
+            <StackPanel x:Name="OuterStack" Margin="18,15" Orientation="Vertical" Visibility="Visible">
+                <StackPanel x:Name="Icons" Orientation="Horizontal">
+                    <Image x:Name="EventsIcon" Height="21" Width="21" Source="EventsIcon.png"/>
+                    <Image x:Name="ExecComIcon" Height="21" Width="21" Source="ExecComIcon.png"/>
+                    <Image x:Name="DemoIcon" Height="21" Width="21" Source="DemoIcon.png"/>
+                </StackPanel>
+                <TextBlock x:Name="Title" Text="Title" FontFamily="SEGOEUI.TTF#Segoe UI" FontWeight="Bold" FontSize="12" MaxWidth="211" TextWrapping="Wrap"/>
+                <TextBlock x:Name="Description" Text="Description" FontFamily="SEGOEUI.TTF#Segoe UI" FontSize="12" MaxWidth="211" TextWrapping="Wrap"/>
+                <Rectangle x:Name="Divider" HorizontalAlignment="Left" Height="1" Width="211" Fill="#9DBE82" Margin="0,6,0,6"/>
+                <StackPanel x:Name="LocationStack" Orientation="Horizontal">
+                    <TextBlock x:Name="LocationTitle" Text="Location:" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12" Margin="0,0,6,0"/>
+                    <TextBlock x:Name="LocationText" Text="Venue" FontFamily="Segoe UI" FontSize="12" MaxWidth="146" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel x:Name="CategoryStack" Orientation="Horizontal" MinHeight="12">
+                    <TextBlock x:Name="CategoryTitle" Text="Category:" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12" Margin="0,0,6,0"/>
+                    <TextBlock x:Name="CategoryText" Text="Category" FontFamily="Segoe UI" FontSize="12" MaxWidth="142" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel x:Name="EventTeamLeadStack" Orientation="Horizontal" MinHeight="12">
+                    <TextBlock x:Name="EventTeamLeadTitle" Text="Event Team Lead:" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12" Margin="0,0,6,0"/>
+                    <TextBlock x:Name="EventTeamLeadText" Text="First Name Last Name" FontFamily="Segoe UI" FontSize="12" MaxWidth="90" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel x:Name="ExecCommLeadStack" Orientation="Horizontal" MinHeight="12">
+                    <TextBlock x:Name="ExecCommLeadTitle" Text="Exec Comms Team Lead:" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12" Margin="0,0,6,0"/>
+                    <TextBlock x:Name="ExecCommLeadText" Text="First Name Last Name" FontFamily="Segoe UI" FontSize="12" MaxWidth="59" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel x:Name="DemoLeadStack" Orientation="Horizontal" MinHeight="12">
+                    <TextBlock x:Name="DemoLeadTitle" Text="Demo Team Lead:" FontFamily="Segoe UI" FontWeight="Bold" FontSize="12" Margin="0,0,6,0"/>
+                    <TextBlock x:Name="DemoLeadText" Text="First Name Last Name" FontFamily="Segoe UI" FontSize="12" MaxWidth="95" TextWrapping="Wrap"/>
+                </StackPanel>
+                <TextBlock x:Name="EventsWorkspaceTitle" Tag="" Visibility="Collapsed" Text="Go To Workspace >>" Foreground="#FF4490A0" FontFamily="Segoe UI" FontSize="12" Margin="0,0,6,0"/>
+            </StackPanel>
+            </Grid>
+        </Border>
+        <Border x:Name="Quarterly" VerticalAlignment="Top" HorizontalAlignment="Left"  BorderBrush="#6D9A39" BorderThickness="1" CornerRadius="5">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC4F1A8" Offset="1"/>
+                    <GradientStop Color="#FFE4F8D2"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel x:Name="QuarterlyOuterStack" Margin="18,15" Orientation="Vertical" Visibility="Visible" MaxWidth="217">
+                
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

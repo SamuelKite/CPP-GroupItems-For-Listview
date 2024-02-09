@@ -1,0 +1,3 @@
+﻿  ParadoxPathFind.cpp
+D:\Projects\Coding\Git\ParadoxPathFind\ParadoxPathFind.cpp(80,44): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  ParadoxPathFind.vcxproj -> D:\Projects\Coding\Git\ParadoxPathFind\Debug\ParadoxPathFind.exe

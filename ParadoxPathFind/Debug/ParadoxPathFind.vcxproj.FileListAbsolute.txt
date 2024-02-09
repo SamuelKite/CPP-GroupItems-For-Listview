@@ -1,0 +1,2 @@
+D:\Projects\Coding\Git\ParadoxPathFind\Debug\ParadoxPathFind.exe
+D:\Projects\Coding\Git\ParadoxPathFind\Debug\ParadoxPathFind.pdb
