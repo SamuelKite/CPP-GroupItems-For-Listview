@@ -1,0 +1,10 @@
+{
+  "cSpell.words": [
+    "wumpus"
+  ],
+  "gradle.javaDebug.cleanOutput": true,
+  "java.project.sourcePaths": [
+    "src"
+  ],
+  "java.project.outputPath": "bin"
+}
